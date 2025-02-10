@@ -106,7 +106,7 @@ const Dashboard = () => {
   
     const fetchInventory = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/inventory");
+        const res = await axios.get("https://landt-maintain-production.up.railway.app/api/inventory");
         setInventory(res.data);
       } catch (err) {
         alert("Error fetching inventory");
