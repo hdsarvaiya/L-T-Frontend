@@ -25,7 +25,7 @@ const AddInventory = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/inventory/add", formData);
+      await axios.post("https://landt-maintain-production.up.railway.app/api/inventory/add", formData);
       alert("Inventory added successfully!");
       navigate("/dashboard"); // Redirect to dashboard after adding
     } catch (error) {
