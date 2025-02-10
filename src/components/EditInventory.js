@@ -15,7 +15,7 @@ const EditInventory = ({ item, onUpdate, onClose }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:5000/api/inventory/${item._id}`, formData);
+      await axios.put(`https://landt-maintain-production.up.railway.app/api/inventory/${item._id}`, formData);
       onUpdate(); // Refresh inventory list
       alert('Inventory updated successfully!');
       onClose(); // Close the modal after update
