@@ -9,7 +9,7 @@ const InventoryList = () => {
     // Fetch inventory items
     const fetchInventory = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/inventory');
+        const response = await axios.get('https://landt-maintain-production.up.railway.app/api/inventory');
         setInventory(response.data);
       } catch (err) {
         console.error("Error fetching inventory:", err);
