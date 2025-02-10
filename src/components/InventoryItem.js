@@ -6,7 +6,7 @@ const InventoryItem = ({ item }) => {
   // Function to send email immediately
   const handleSendEmail = async (id) => {
     try {
-      await axios.post(`http://localhost:5000/api/inventory/send-email/${id}`);
+      await axios.post(`https://landt-maintain-production.up.railway.app/api/inventory/send-email/${id}`);
       alert('Maintenance reminder email sent successfully!');
     } catch (err) {
       console.error("Error sending immediate email:", err);
