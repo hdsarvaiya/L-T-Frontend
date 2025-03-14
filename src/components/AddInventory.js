@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../styles/addInventory.css"
+const apiUrl = process.env.REACT_APP_REACT_URL;
+
 
 const AddInventory = () => {
   const [formData, setFormData] = useState({
@@ -25,13 +27,32 @@ const AddInventory = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("https://landt-maintain-production.up.railway.app/api/inventory/add", formData);
+      // Retrieve token from localStorage
+      const token = localStorage.getItem("token");
+  
+      if (!token) {
+        alert("Please log in first.");
+        return;
+      }
+  
+      // Set Authorization header with Bearer token
+      const config = {
+        headers: {
+          Authorization: `Bearer ${token}`, // Send the token with the request
+        },
+      };
+  
+      // Make the POST request to add inventory
+      await axios.post(`${apiUrl}/api/inventory/add`, formData, config);
+  
       alert("Inventory added successfully!");
-      navigate("/dashboard"); // Redirect to dashboard after adding
+      navigate("/admin-dashboard"); // Redirect to dashboard after adding
     } catch (error) {
       alert("Failed to add inventory. Please try again.");
+      console.error(error); // Log error for debugging
     }
   };
+  
 
   return (
     <div className="add-inventory-container">

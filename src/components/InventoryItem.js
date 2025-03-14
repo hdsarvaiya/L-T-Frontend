@@ -1,12 +1,13 @@
 import React from 'react';
 import axios from 'axios';
+const apiUrl = process.env.REACT_APP_REACT_URL;
 
 const InventoryItem = ({ item }) => {
 
   // Function to send email immediately
   const handleSendEmail = async (id) => {
     try {
-      await axios.post(`https://landt-maintain-production.up.railway.app/api/inventory/send-email/${id}`);
+      await axios.post(`${apiUrl}/api/inventory/send-email/${id}`);
       alert('Maintenance reminder email sent successfully!');
     } catch (err) {
       console.error("Error sending immediate email:", err);

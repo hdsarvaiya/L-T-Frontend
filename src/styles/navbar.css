@@ -1,0 +1,72 @@
+/* Navbar.css */
+.navbar {
+    background-color: #333; /* Example dark background */
+    padding: 1rem 0; /* Adjust padding as needed */
+    position: sticky; /* Sticky navbar */
+    top: 0;
+    z-index: 100; /* Ensure it's above other content */
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between; /* Align logo and menu */
+    align-items: center;
+    max-width: 1200px; /* Set a max-width for larger screens */
+    margin: 0 auto; /* Center the container */
+    padding: 0 20px; /* Add some side padding */
+  }
+  
+  .navbar-logo img{
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    height: 40px;
+  }
+  
+  .navbar-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .navbar-item {
+    margin-left: 20px; /* Spacing between menu items */
+  }
+  
+  .navbar-link {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem; /* Add some padding to links */
+    border-radius: 5px; /* Optional: Add rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+  }
+  
+  .navbar-link:hover {
+    background-color: #555; /* Darker background on hover */
+  }
+  
+  .logout-button{
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .logout-button:hover{
+    background-color: #555;
+  }
+  
+  /* Responsive adjustments (example) */
+  @media (max-width: 768px) {
+    .navbar-menu {
+      flex-direction: column; /* Stack menu items vertically */
+      text-align: center; /* Center text */
+    }
+    .navbar-item {
+      margin: 10px 0; /* Adjust margin for vertical stacking */
+    }
+  }

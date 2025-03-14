@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import InventoryItem from './InventoryItem'; // Component that displays each inventory item
+const apiUrl = process.env.REACT_APP_REACT_URL;
+
 
 const InventoryList = () => {
   const [inventory, setInventory] = useState([]);
@@ -9,7 +11,7 @@ const InventoryList = () => {
     // Fetch inventory items
     const fetchInventory = async () => {
       try {
-        const response = await axios.get('https://landt-maintain-production.up.railway.app/api/inventory');
+        const response = await axios.get(`${apiUrl}/api/inventory`);
         setInventory(response.data);
       } catch (err) {
         console.error("Error fetching inventory:", err);
